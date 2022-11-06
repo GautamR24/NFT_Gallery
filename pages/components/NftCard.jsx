@@ -1,14 +1,6 @@
 import copy from 'copy-to-clipboard';
 export const NftCard = ({ nft }) => {
-    const changeText = async () => {
-        copy('Text');
-
-        // Copy with options
-        copy('Text', {
-            debug: true,
-            message: 'Press #{key} to copy',
-        });
-    }
+    
 
     return (
         <div className="w-1/4 flex flex-col">
