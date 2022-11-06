@@ -6,6 +6,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "clipboard": "^2.0.11",
+    "copy-to-clipboard": "^3.3.2",
     "dotenv": "^16.0.3",
     "find-config": "^1.0.0",
     "next": "latest",

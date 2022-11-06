@@ -1,4 +1,14 @@
+import copy from 'copy-to-clipboard';
 export const NftCard = ({ nft }) => {
+    const changeText = async () => {
+        copy('Text');
+
+        // Copy with options
+        copy('Text', {
+            debug: true,
+            message: 'Press #{key} to copy',
+        });
+    }
 
     return (
         <div className="w-1/4 flex flex-col">
@@ -18,6 +28,15 @@ export const NftCard = ({ nft }) => {
             </div>
             <div className="flex justify-center mb-1">
                 <a href={`https://etherscan.io/token/${nft.contract.address}`} target={"_blank"} className="py-2 px-4 bg-blue-500 w-1/2 text-center rouded-m text-white cursor-pointer">View on etherscan</a>
+                <button  onClick={()=>{
+                    copy(nft.contract.address);
+
+                    // Copy with options
+                    copy(nft.contract.address, {
+                        debug: true,
+                        message: 'Press #{key} to copy',
+                    })
+                }}>copy address</button>
             </div>
         </div>
     )

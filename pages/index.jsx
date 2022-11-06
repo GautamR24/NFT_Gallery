@@ -3,7 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 import { NftCard } from './components/NftCard';
-//require('dotenv').config();
+// require("dotenv").config();
+
 
 const Home = () => {
   /**
@@ -21,8 +22,9 @@ const Home = () => {
   const fetchNfts = async () => {
     let nfts;
     console.log("fetching the nfts");
-    const api = "3rVV5P7RQ5yakHMXmpC3QwUmKydUTrze";
-    const baseURL = `https://polygon-mumbai.g.alchemy.com/v2/${api}/getNFTs/`;
+    const api = "zkL2knEWeX1u2ewbKZNkBXOCQMFct8jL";
+    console.log("This is the api key",api);
+    const baseURL = `https://eth-mainnet.g.alchemy.com/v2/${api}/getNFTs/`;
 
 
     if (!collection) {
@@ -49,13 +51,14 @@ const Home = () => {
 
 
   }
+  
   const fetchNftsForCollection = async () => {
     if (collection) {
       var requestOptions = {
         method: 'GET'
       };
-      const api = "3rVV5P7RQ5yakHMXmpC3QwUmKydUTrze";
-      const baseURL = `https://polygon-mumbai.g.alchemy.com/nft/v2/${api}/getNFTsForCollection/`;
+      const api = "zkL2knEWeX1u2ewbKZNkBXOCQMFct8jL";
+      const baseURL = `https://eth-mainnet.g.alchemy.com/nft/v2/${api}/getNFTsForCollection/`;
       const fetchURL = `${baseURL}?contractAddress=${collection}&withMetadata="true"`;
       const nfts = await fetch(fetchURL, requestOptions).then(data => data.json());
       if (nfts) {
