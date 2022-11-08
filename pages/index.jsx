@@ -73,7 +73,7 @@ const Home = () => {
       };
       const api = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
       const baseURL = `https://eth-mainnet.g.alchemy.com/nft/v2/${api}/getNFTsForCollection/`;
-      const fetchURL = `${baseURL}?contractAddress=${collection}&withMetadata="true"`;
+      const fetchURL = `${baseURL}?contractAddress=${collection}&withMetadata=${"true"}`;
       const nfts = await fetch(fetchURL, requestOptions).then(data => data.json());
       /**
        * testing for pagenation
