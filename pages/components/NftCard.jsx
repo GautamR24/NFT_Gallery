@@ -28,6 +28,7 @@ export const NftCard = ({ nft }) => {
                         debug: true,
                         message: 'Press #{key} to copy',
                     })
+                    alert("address copied");
                 }}>copy address</button>
             </div>
         </div>
